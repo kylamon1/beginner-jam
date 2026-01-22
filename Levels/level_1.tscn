@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=4 uid="uid://wa8fgiefcnme"]
+
+[ext_resource type="PackedScene" uid="uid://bp00ftmja5yoo" path="res://Levels/Level_Template.tscn" id="1_n0qsc"]
+
+[node name="Level1" instance=ExtResource("1_n0qsc")]
+next_level = "uid://c8xxggpxdvm64"
+
+[node name="Walls" parent="." index="2"]
+tile_map_data = PackedByteArray("AAAOAP7/AAAIAAcAAAATAAUAAAAFAAQAAAATAAQAAAAFAAMAAAATAAMAAAAFAAAAAAASAAUAAAAEAAQAAAASAAQAAAAIAAcAAAARAAUAAAABAAUAAAARAAQAAAAIAAcAAAARAAMAAAACAAAAAAAQAAUAAAABAAUAAAAQAAQAAAAIAAcAAAAQAAMAAAACAAAAAAAPAAUAAAABAAUAAAAPAAQAAAAIAAcAAAAPAAMAAAABAAAAAAAOAAUAAAAEAAQAAAAOAAQAAAAIAAcAAAAOAAMAAAAEAAAAAAANAAUAAAADAAQAAAANAAQAAAAIAAcAAAANAAMAAAABAAAAAAAMAAUAAAADAAQAAAAMAAQAAAAIAAcAAAAMAAMAAAADAAAAAAALAAUAAAADAAQAAAALAAQAAAAIAAcAAAALAAMAAAABAAAAAAAKAAUAAAABAAQAAAAKAAQAAAAIAAcAAAAKAAMAAAAEAAAAAAAJAAUAAAACAAUAAAAJAAQAAAAIAAcAAAAJAAMAAAAEAAAAAAAIAAUAAAADAAQAAAAIAAQAAAAIAAcAAAAIAAMAAAAEAAAAAAAHAAUAAAAEAAQAAAAHAAQAAAAIAAcAAAAHAAMAAAAEAAAAAAAGAAUAAAACAAUAAAAGAAQAAAAIAAcAAAAGAAMAAAACAAAAAAAFAAUAAAABAAUAAAAFAAQAAAAIAAcAAAAFAAMAAAACAAAAAAAEAAUAAAAEAAQAAAAEAAQAAAAIAAcAAAAEAAMAAAACAAAAAAADAAUAAAACAAQAAAADAAQAAAAIAAcAAAADAAMAAAAEAAAAAAACAAUAAAAEAAQAAAACAAQAAAAIAAcAAAACAAMAAAAEAAAAAAABAAUAAAACAAQAAAABAAQAAAAIAAcAAAABAAMAAAAEAAAAAAAAAAUAAAAAAAQAAAAAAAQAAAAAAAMAAAAAAAMAAAAAAAAAAAASAAMAAAAIAAcAAAA=")
+
+[node name="Tiles" parent="." index="3"]
+tile_map_data = PackedByteArray("AAABAAQAAAAAAAAAAQACAAQAAAAAAAAAAQADAAQAAAAAAAAAAQASAAQAAAAAAAAAAQARAAQAAAAAAAAAAQAEAAQAAAAAAAAAAgAFAAQAAAAAAAAAAgAGAAQAAAAAAAAAAgAHAAQAAAAAAAAAAgAIAAQAAAAAAAAAAgAJAAQAAAAAAAAAAgAKAAQAAAAAAAAAAgALAAQAAAAAAAAAAgAMAAQAAAAAAAAAAgANAAQAAAAAAAAAAgAOAAQAAAAAAAAAAgAPAAQAAAAAAAAAAgAQAAQAAAAAAAAAAgA=")
+
+[node name="Door" parent="." index="6"]
+position = Vector2(288, 48)
+
+[node name="CollisionShape2D" parent="WinArea" index="0"]
+position = Vector2(160, 32)
+
+[connection signal="body_entered" from="Tiles/StableTile" to="Tiles/StableTile" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189749" to="Tiles/@Area2D@189749" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189750" to="Tiles/@Area2D@189750" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189751" to="Tiles/@Area2D@189751" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189752" to="Tiles/@Area2D@189752" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/Tile" to="Tiles/Tile" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189753" to="Tiles/@Area2D@189753" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189754" to="Tiles/@Area2D@189754" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189755" to="Tiles/@Area2D@189755" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189756" to="Tiles/@Area2D@189756" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189757" to="Tiles/@Area2D@189757" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189758" to="Tiles/@Area2D@189758" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189759" to="Tiles/@Area2D@189759" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189760" to="Tiles/@Area2D@189760" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189761" to="Tiles/@Area2D@189761" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189762" to="Tiles/@Area2D@189762" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189763" to="Tiles/@Area2D@189763" method="_on_body_entered"]
+[connection signal="body_entered" from="Tiles/@Area2D@189764" to="Tiles/@Area2D@189764" method="_on_body_entered"]

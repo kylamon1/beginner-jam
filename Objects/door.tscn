@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://byrnsmvkmvuq7"]
+
+[ext_resource type="Texture2D" uid="uid://cjnw6dx0vb0nx" path="res://2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_5xojw"]
+[ext_resource type="Script" uid="uid://b66lgb4t3btb" path="res://Objects/door.gd" id="1_vkudc"]
+[ext_resource type="AudioStream" uid="uid://bcrdo277vnus3" path="res://Sound/Door.wav" id="3_2fpl1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkudc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xojw"]
+size = Vector2(16, 18)
+
+[node name="Door" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_vkudc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5xojw")
+centered = false
+region_enabled = true
+region_rect = Rect2(112, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vkudc")
+
+[node name="UnlockArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockArea"]
+position = Vector2(8, 9)
+shape = SubResource("RectangleShape2D_5xojw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2fpl1")
+
+[connection signal="body_entered" from="UnlockArea" to="." method="_on_unlock_area_body_entered"]

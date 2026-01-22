@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf7phyueqogg6"]
+
+[ext_resource type="AudioStream" uid="uid://cxcqccyiwf716" path="res://Sound/8-bit-dungeon-251388.mp3" id="1_f6yec"]
+
+[node name="Globals" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_f6yec")
+volume_db = -10.0
+autoplay = true

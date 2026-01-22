@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://db4yfkct0om1n"]
+
+[ext_resource type="PackedScene" uid="uid://ca3lrt0stigf4" path="res://Tiles/tile_template.tscn" id="1_71op4"]
+
+[node name="Tile" instance=ExtResource("1_71op4")]
+
+[node name="KillArea" parent="." index="2"]
+visible = false

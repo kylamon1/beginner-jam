@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://2d1w4ckdw4lq"]
+
+[ext_resource type="Texture2D" uid="uid://ccfw13w35gxyl" path="res://2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_1.png" id="1_gwnis"]
+[ext_resource type="Script" uid="uid://coonqs1rublep" path="res://Player/player.gd" id="1_k53q1"]
+[ext_resource type="Texture2D" uid="uid://dx73wnkbmomov" path="res://2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_2.png" id="2_k53q1"]
+[ext_resource type="Texture2D" uid="uid://ctppkxbkyuhoe" path="res://2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_3.png" id="3_fhl08"]
+[ext_resource type="Texture2D" uid="uid://5wmudpu12adp" path="res://2D Pixel Dungeon Asset Pack/Character_animation/priests_idle/priest1/v1/priest1_v1_4.png" id="4_vtle1"]
+[ext_resource type="AudioStream" uid="uid://dpbryn7s240gt" path="res://Sound/step.wav" id="6_fhl08"]
+[ext_resource type="AudioStream" uid="uid://bjcjjcj7inhu5" path="res://Sound/die.wav" id="7_vtle1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k53q1"]
+size = Vector2(14, 14)
+
+[sub_resource type="Animation" id="Animation_od3ui"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_gwnis"), ExtResource("2_k53q1"), ExtResource("3_fhl08"), ExtResource("4_vtle1")]
+}
+
+[sub_resource type="Animation" id="Animation_00tjw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gwnis")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x3vf3"]
+_data = {
+&"RESET": SubResource("Animation_00tjw"),
+&"walk": SubResource("Animation_od3ui")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_k53q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_k53q1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_gwnis")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x3vf3")
+}
+autoplay = "walk"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 8)
+target_position = Vector2(0, 16)
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_fhl08")
+volume_db = -7.87
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_vtle1")
