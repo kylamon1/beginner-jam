@@ -1,7 +1,6 @@
 class_name Key
 extends Area2D
 
-
 func _on_body_entered(body: Node2D) -> void:
 	body.picked_up_key(self)
 	$AudioStreamPlayer2D.play()

@@ -40,7 +40,7 @@ func _physics_process(_delta: float) -> void:
 		
 		if target_position != position:
 			moving = true
-			foot_steps.pitch_scale = randf_range(-0.8, 1.2)
+			foot_steps.pitch_scale = randf_range(0.8, 1.2)
 			foot_steps.play()
 			var tw = create_tween()
 			tw.tween_property(self, "position", target_position, speed)

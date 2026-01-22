@@ -1,7 +1,6 @@
 extends StaticBody2D
 @onready var sprite: Sprite2D = $Sprite2D
 
-
 func _on_unlock_area_body_entered(body: Node2D) -> void:
 	if body.use_key():
 		$AudioStreamPlayer2D.play()

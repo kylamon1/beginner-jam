@@ -25,6 +25,5 @@ func fall():
 	$CollisionShape2D.set_deferred("disabled", true)
 	$KillArea/CollisionShape2D2.set_deferred("disabled", false)
 
-
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	body.kill()
